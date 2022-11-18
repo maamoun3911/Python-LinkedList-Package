@@ -55,18 +55,18 @@ class LList:
             pre, curr = pre.next, curr.next
     
     # Delete functions group
-    def delete_from_the_begging(self):
+    def delete_from_the_begging(self) -> None:
         if not self.head:
             print("Empty Linked List")
         self.head = self.head.next
-    def delete_from_the_end(self):
+    def delete_from_the_end(self) -> None:
         if not self.head:
             print("Empty Linked List")
         pre, curr = self.head, self.head.next
         while curr.next:
             curr, pre = curr.next, pre.next
         pre.next = curr.next
-    def delete_from_the_middle(self, data):
+    def delete_from_the_middle(self, data) -> None:
         if not self.head:
             print("Empty Linked List")
         elif self.head.val == data:
@@ -110,7 +110,7 @@ class LList:
         print(self.__linkedListlength())
     
     # Overviw
-    def overview(self):
+    def overview(self) -> str:
         if not self.head:
             print("Empty Linked List")
         curr = self.head
@@ -124,7 +124,7 @@ class LList:
                 return
     
     # View element
-    def view_element(self, data):
+    def view_element(self, data) -> str:
         if not self.head:
             print("Empty Linked List")
         counter: int = 0
@@ -144,7 +144,7 @@ class LList:
         newNode.next = nextNode
         return newNode
     
-    def __linkedListlength(self) -> tuple[int, Node]:
+    def __linkedListlength(self) -> int:
         lengthCounter: int = 0
         curr = self.head
         while curr:
